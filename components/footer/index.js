@@ -10,8 +10,8 @@ export default function index() {
             © 2021 <b>Koray Özdemir.</b> Bütün Hakları Saklıdır.
           </p>
           <div className='d-flex'>
-            <Link href='#'>
-              <a className='btn btn-outline-primary me-2'>
+            <Link href='https://www.facebook.com/korayozdmir'>
+              <a rel='nofollow' className='btn btn-outline-primary me-2'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'
@@ -24,8 +24,8 @@ export default function index() {
                 </svg>
               </a>
             </Link>
-            <Link href='#'>
-              <a className='btn btn-outline-danger me-2'>
+            <Link href='https://www.instagram.com/koray.ozdemirrr/'>
+              <a rel='nofollow' className='btn btn-outline-danger me-2'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'
@@ -38,8 +38,8 @@ export default function index() {
                 </svg>
               </a>
             </Link>
-            <Link href='#'>
-              <a className='btn btn-outline-info me-2'>
+            <Link href='https://twitter.com/korayozdemirrr'>
+              <a rel='nofollow' className='btn btn-outline-info me-2'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'
@@ -52,8 +52,8 @@ export default function index() {
                 </svg>
               </a>
             </Link>
-            <Link href='#'>
-              <a className='btn btn-outline-primary me-2'>
+            <Link href='https://www.linkedin.com/in/korayozdemir/'>
+              <a rel='nofollow' className='btn btn-outline-primary me-2'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'
@@ -66,8 +66,8 @@ export default function index() {
                 </svg>
               </a>
             </Link>
-            <Link href='#'>
-              <a className='btn btn-outline-dark'>
+            <Link href='https://github.com/korayozdemirr'>
+              <a ref='nofollow' className='btn btn-outline-dark'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'

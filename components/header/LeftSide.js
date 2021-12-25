@@ -3,7 +3,9 @@ export default function LeftSide() {
   return (
     <>
       <Link href='/'>
-        <a className='navbar-brand fs-2'>Koray Özdemir</a>
+        <a title='Anasayfa' className='navbar-brand fs-2'>
+          Koray Özdemir
+        </a>
       </Link>
       <button
         className='navbar-toggler'

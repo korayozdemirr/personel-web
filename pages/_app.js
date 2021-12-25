@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <link rel='canonical' href={seo.url} />
+        <link rel='icon' href='./profile.png' type='image/png' sizes='24x24' />
         <title>Koray Özdemir</title>
         <meta name='description' content={seo.description} />
         <meta property='og:url' content={seo.url} />
@@ -23,6 +24,9 @@ function MyApp({ Component, pageProps }) {
         <meta name='twitter:url' content={seo.url} />
         <meta name='twitter:title' content={seo.name} />
         <meta name='twitter:description' content={seo.description} />
+        <meta name='Author' content='Koray Özdemir' />
+        <meta name='publisher' content='Vercel Inc.' />
+        <meta name='robots' content='follow, index' />
       </Head>
       <Header />
       <main>

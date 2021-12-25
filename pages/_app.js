@@ -1,3 +1,4 @@
+import HttpsRedirect from 'react-https-redirect';
 import Head from 'next/head';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -10,7 +11,7 @@ function MyApp({ Component, pageProps }) {
       ' Uzun süreden beridir dijital pazarlama üzerinde çalışıyorum. Müşterilerin internette sizi bulmasını sağlamak için web sitelerinden yerel işletme girişlerine, mobil uygulamalardan sosyal medyaya kadar uzanan çok çeşitli yollar var. Ben bu yolları sizin için oluşturabilirim.',
   };
   return (
-    <>
+    <HttpsRedirect>
       <Head>
         <link rel='canonical' href={seo.url} />
         <link rel='icon' href='./profile.png' type='image/png' sizes='24x24' />
@@ -35,7 +36,7 @@ function MyApp({ Component, pageProps }) {
       </main>
       <Footer />
       <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'></script>
-    </>
+    </HttpsRedirect>
   );
 }
 

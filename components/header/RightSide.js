@@ -22,24 +22,34 @@ export default function RightSide() {
         <ul className='navbar-nav justify-content-end flex-grow-1 pe-3 fs-5'>
           <li className='nav-item'>
             <Link href='/'>
-              <a className='nav-link active' aria-current='page'>
+              <a
+                className='nav-link active'
+                aria-current='page'
+                title='Anasayfa'
+              >
                 Ana Sayfa
               </a>
             </Link>
           </li>
           <li className='nav-item'>
             <Link href='/about'>
-              <a className='nav-link'>Hakkımda</a>
+              <a className='nav-link' title='Hakkımda'>
+                Hakkımda
+              </a>
             </Link>
           </li>
           <li className='nav-item'>
             <Link href='/about'>
-              <a className='nav-link'>Servisler</a>
+              <a className='nav-link' title='Servisler'>
+                Servisler
+              </a>
             </Link>
           </li>
           <li className='nav-item'>
             <Link href='/about'>
-              <a className='nav-link'>İletişim</a>
+              <a className='nav-link' title='İletişim'>
+                İletişim
+              </a>
             </Link>
           </li>
         </ul>

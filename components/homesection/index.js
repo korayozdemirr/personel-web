@@ -8,7 +8,7 @@ export default function index() {
         <div className='col-lg-6'>
           <LeftSide />
         </div>
-        <div className='col-lg-6'>
+        <div className='col-lg-6 position-relative'>
           <RightSide />
         </div>
       </div>

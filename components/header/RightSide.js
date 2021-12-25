@@ -3,6 +3,7 @@ export default function RightSide() {
   return (
     <div
       className='offcanvas offcanvas-start bg-light'
+      style={{ maxWidth: '80%' }}
       tabIndex={-1}
       id='offcanvasNavbar'
       aria-labelledby='offcanvasNavbarLabel'

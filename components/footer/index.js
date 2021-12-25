@@ -7,7 +7,7 @@ export default function index() {
       <footer className='align-items-center d-flex' style={{ height: '90px' }}>
         <div className='container d-flex justify-content-between align-items-center'>
           <p className='fs-5' style={{ height: '30px', lineHeight: '40px' }}>
-            © 2021 <b>Koray Özdemir.</b> Bütün Hakları Saklıdır.
+            © 2021 <b>Koray Özdemir..</b> Bütün Hakları Saklıdır.
           </p>
           <div className='d-flex'>
             <Link href='#'>

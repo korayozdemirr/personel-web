@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
         <link rel='canonical' href={seo.url} />
         <link rel='icon' href='./profile.png' type='image/png' sizes='24x24' />
         <title>Koray Özdemir</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content={seo.description} />
         <meta property='og:url' content={seo.url} />
         <meta property='og:type' content='website' />

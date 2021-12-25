@@ -1,8 +1,10 @@
 export default function LeftSide() {
   return (
     <>
+      <b className='fs-4' style={{ color: '#adb5bd' }}>
+        Merhaba
+      </b>
       <h1 className='fs-4'>
-        <h5 style={{ color: '#adb5bd' }}>Merhaba</h5>
         Ben <b className='fs-4'>Koray Özdemir.</b> Ben bir{' '}
         <b className='fs-4'>dijital pazarlama</b> uzmanıyım.
       </h1>

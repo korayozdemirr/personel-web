@@ -67,7 +67,7 @@ export default function index() {
               </a>
             </Link>
             <Link href='https://github.com/korayozdemirr'>
-              <a ref='nofollow' className='btn btn-outline-dark'>
+              <a rel='nofollow' className='btn btn-outline-dark'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'

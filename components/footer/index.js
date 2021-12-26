@@ -7,7 +7,7 @@ export default function index() {
       <footer className='align-items-center d-flex'>
         <div className='container'>
           <div className='row'>
-            <div className='col-lg-8 my-3'>
+            <div className='col-lg-8 mt-4'>
               <p
                 className='fs-5 text-center  text-lg-start'
                 style={{ height: '30px' }}
@@ -15,7 +15,7 @@ export default function index() {
                 © 2021 <b>Koray Özdemir.</b> Bütün Hakları Saklıdır.
               </p>
             </div>
-            <div className='col-lg-4 d-flex align-items-center justify-content-center '>
+            <div className='col-lg-4 d-flex align-items-center justify-content-center my-4'>
               <Link href='https://www.facebook.com/korayozdmir'>
                 <a rel='nofollow' className='btn btn-outline-primary me-2'>
                   <svg

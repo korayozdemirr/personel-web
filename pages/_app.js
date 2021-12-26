@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     url: 'https://korayozdemir.vercel.app/',
     name: 'Koray Özdemir',
     description:
-      ' Uzun süreden beridir dijital pazarlama üzerinde çalışıyorum. Müşterilerin internette sizi bulmasını sağlamak için web sitelerinden yerel işletme girişlerine, mobil uygulamalardan sosyal medyaya kadar uzanan çok çeşitli yollar var. Ben bu yolları sizin için oluşturabilirim.',
+      'Merhaba ben Koray Özdemir. Uzun süreden beridir dijital pazarlama üzerinde çalışıyorum. Müşterilerin internette sizi bulmasını sağlamak için web sitelerinden yerel işletme girişlerine, mobil uygulamalardan sosyal medyaya kadar uzanan çok çeşitli yollar var. Ben bu yolları sizin için oluşturabilirim.',
   };
   return (
     <HttpsRedirect>

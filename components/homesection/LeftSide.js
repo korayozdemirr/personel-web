@@ -16,8 +16,8 @@ export default function LeftSide() {
         oluşturabilirim.
       </p>
       <div className='mt-5'>
-        <button className='btn btn-primary me-3 btn-lg'>Hire me</button>
-        <button className='btn btn-outline-primary btn-lg'>Portfolio</button>
+        <button className='btn btn-dark me-3 btn-lg'>Hire me</button>
+        <button className='btn btn-outline-dark btn-lg'>Portfolio</button>
       </div>
     </>
   );

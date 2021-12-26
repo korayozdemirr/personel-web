@@ -10,7 +10,7 @@ export default function index() {
             <div className='col-lg-8 my-3'>
               <p
                 className='fs-5 text-center  text-lg-start'
-                style={{ height: '30px', lineHeight: '40px' }}
+                style={{ height: '30px' }}
               >
                 © 2021 <b>Koray Özdemir.</b> Bütün Hakları Saklıdır.
               </p>

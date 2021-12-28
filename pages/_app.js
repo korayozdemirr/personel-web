@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../styles/global.css';
 function MyApp({ Component, pageProps }) {
   const seo = {
     url: 'https://korayozdemir.vercel.app/',
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }) {
     <HttpsRedirect>
       <Head>
         <link rel='canonical' href={seo.url} />
-        <link rel='icon' href='./profile.png' type='image/png' sizes='24x24' />
+        <link rel='icon' href='./icon.png' type='image/png' sizes='24x24' />
         <title>Koray Özdemir</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content={seo.description} />

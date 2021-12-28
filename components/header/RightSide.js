@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 export default function RightSide() {
+  const router = useRouter();
   return (
     <div
       className='offcanvas offcanvas-start bg-light'
@@ -24,7 +26,9 @@ export default function RightSide() {
           <li className='nav-item'>
             <Link href='/'>
               <a
-                className='nav-link active'
+                className={
+                  router.pathname == '/' ? 'nav-link active' : '' + 'nav-link'
+                }
                 aria-current='page'
                 title='Anasayfa'
               >
@@ -34,21 +38,38 @@ export default function RightSide() {
           </li>
           <li className='nav-item'>
             <Link href='/about'>
-              <a className='nav-link' title='Hakkımda'>
+              <a
+                className={
+                  router.pathname == '/about' ? 'nav-link active' : 'nav-link'
+                }
+                title='Hakkımda'
+              >
                 Hakkımda
               </a>
             </Link>
           </li>
           <li className='nav-item'>
             <Link href='/about'>
-              <a className='nav-link' title='Servisler'>
+              <a
+                className={
+                  router.pathname == '/services'
+                    ? 'nav-link active'
+                    : 'nav-link'
+                }
+                title='Servisler'
+              >
                 Servisler
               </a>
             </Link>
           </li>
           <li className='nav-item'>
             <Link href='/about'>
-              <a className='nav-link' title='İletişim'>
+              <a
+                className={
+                  router.pathname == '/contact' ? 'nav-link active' : 'nav-link'
+                }
+                title='İletişim'
+              >
                 İletişim
               </a>
             </Link>

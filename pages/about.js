@@ -25,15 +25,15 @@ export default function about() {
             <div className='col-lg-8'>
               <h2>Özgeçmiş</h2>
               <p>
-                1994 yılında İzmir'de doğdum. Kırklareli şehirinde yaşamaktayım.
-                Mehmet Akif Ersoy Anadolu Meslek Lisesi Bilgisayar Programcılığı
-                (2012) mezunuyum. 2013 - 2018 yılları arasında Kırklareli
-                Üniversitesi Lüleburgaz Meslek Yüksek Okulu Bilgisayar
-                Programcılığı(ön lisans) programından mezun oldum. Çalışmak
-                zorunda olduğum için ilk 3 sene okula gidemediğimden dolayı
-                okulu geç bitirdim. Sonrasında 2018 - 2020 yıllarında dikey
-                geçiş sınavı ile Anadolu Üniversitesi Yönetim Bileşim Sistemleri
-                bölümününden mezun oldum.
+                1994 yılında {"İzmir'de"} doğdum. Kırklareli şehirinde
+                yaşamaktayım. Mehmet Akif Ersoy Anadolu Meslek Lisesi Bilgisayar
+                Programcılığı (2012) mezunuyum. 2013 - 2018 yılları arasında
+                Kırklareli Üniversitesi Lüleburgaz Meslek Yüksek Okulu
+                Bilgisayar Programcılığı(ön lisans) programından mezun oldum.
+                Çalışmak zorunda olduğum için ilk 3 sene okula gidemediğimden
+                dolayı okulu geç bitirdim. Sonrasında 2018 - 2020 yıllarında
+                dikey geçiş sınavı ile Anadolu Üniversitesi Yönetim Bileşim
+                Sistemleri bölümününden mezun oldum.
               </p>
               <p>
                 Yazılım ile lise zamanlarımda tanıştım. Uzun süreden beridir web

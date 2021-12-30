@@ -14,6 +14,15 @@ function MyApp({ Component, pageProps }) {
   return (
     <HttpsRedirect>
       <Head>
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-X6QMWV6J2V'
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-X6QMWV6J2V');
+        </script>
         <link rel='canonical' href={seo.url} />
         <link rel='icon' href='./icon.png' type='image/png' sizes='24x24' />
         <title>Koray Özdemir</title>

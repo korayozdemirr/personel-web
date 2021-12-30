@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import SocialMedia from './SocialMedia';
 
 export default function index() {
@@ -16,7 +15,7 @@ export default function index() {
                 © 2021 <b>Koray Özdemir.</b> Bütün Hakları Saklıdır.
               </p>
             </div>
-            <div className='col-lg-4 d-flex align-items-center justify-content-center my-4'>
+            <div className='col-lg-4 d-flex align-items-center justify-content-end my-4'>
               <SocialMedia />
             </div>
           </div>

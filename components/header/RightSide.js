@@ -49,7 +49,7 @@ export default function RightSide() {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link href='/about'>
+            <Link href='/services'>
               <a
                 className={
                   router.pathname == '/services'
@@ -63,7 +63,7 @@ export default function RightSide() {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link href='/about'>
+            <Link href='/contact'>
               <a
                 className={
                   router.pathname == '/contact' ? 'nav-link active' : 'nav-link'

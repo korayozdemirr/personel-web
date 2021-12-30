@@ -85,7 +85,6 @@ export default function about() {
                       placeholder='Konu'
                       className='form-control'
                       id='floatingSubject'
-                      placeholder='adı soyadı'
                     />
                     <label
                       htmlFor='floatingSubject'

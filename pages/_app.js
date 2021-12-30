@@ -15,20 +15,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <HttpsRedirect>
       <Head>
-        <Script
-          src='https://www.googletagmanager.com/gtag/js?id=G-X6QMWV6J2V'
-          strategy='afterInteractive'
-        />
-        <Script id='google-analytics' strategy='afterInteractive'>
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-X6QMWV6J2V');
-        `}
-        </Script>
-
         <link rel='canonical' href={seo.url} />
         <link rel='icon' href='./icon.png' type='image/png' sizes='24x24' />
         <title>Koray Özdemir</title>
@@ -46,11 +32,25 @@ function MyApp({ Component, pageProps }) {
         <meta name='publisher' content='Vercel Inc.' />
         <meta name='robots' content='follow, index' />
       </Head>
+      <Script
+        src='https://www.googletagmanager.com/gtag/js?id=G-X6QMWV6J2V'
+        strategy='afterInteractive'
+      />
+      <Script id='google-analytics' strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-X6QMWV6J2V');
+        `}
+      </Script>
       <Header />
       <main>
         <Component {...pageProps} />
       </main>
       <Footer />
+
       <Script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' />
     </HttpsRedirect>
   );

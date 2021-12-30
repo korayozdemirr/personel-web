@@ -2,6 +2,7 @@ import HttpsRedirect from 'react-https-redirect';
 import Head from 'next/head';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import Script from 'next/script';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../styles/global.css';
 function MyApp({ Component, pageProps }) {
@@ -14,18 +15,20 @@ function MyApp({ Component, pageProps }) {
   return (
     <HttpsRedirect>
       <Head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `<script async src="https://www.googletagmanager.com/gtag/js?id=G-X6QMWV6J2V"></script>
-              <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-              
-                gtag('config', 'G-X6QMWV6J2V');
-              </script>`,
-          }}
+        <Script
+          src='https://www.googletagmanager.com/gtag/js?id=G-X6QMWV6J2V'
+          strategy='afterInteractive'
         />
+        <Script id='google-analytics' strategy='afterInteractive'>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-X6QMWV6J2V');
+        `}
+        </Script>
+
         <link rel='canonical' href={seo.url} />
         <link rel='icon' href='./icon.png' type='image/png' sizes='24x24' />
         <title>Koray Özdemir</title>
@@ -48,7 +51,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <Footer />
-      <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'></script>
+      <Script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' />
     </HttpsRedirect>
   );
 }

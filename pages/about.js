@@ -7,7 +7,7 @@ export default function about() {
     <>
       <section>
         <div className='container py-d9'>
-          <h1 className='text-secondary text-center'>Hakkımda</h1>
+          <h2 className='text-secondary text-center'>Hakkımda</h2>
         </div>
       </section>
       <section className='bg-light'>

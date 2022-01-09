@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function LeftSide() {
   return (
     <>
@@ -6,18 +8,25 @@ export default function LeftSide() {
       </b>
       <h2 className='fs-4'>
         Ben <b className='fs-4'>Koray Özdemir.</b> Ben bir{' '}
-        <b className='fs-4'>dijital pazarlama</b> uzmanıyım.
+        <b className='fs-4'>Yazılım</b> geliştiricisiyim.
       </h2>
       <p className='fs-6'>
-        Uzun süreden beridir dijital pazarlama üzerinde çalışıyorum.
-        Müşterilerin internette sizi bulmasını sağlamak için web sitelerinden
-        yerel işletme girişlerine, mobil uygulamalardan sosyal medyaya kadar
-        uzanan çok çeşitli yollar var. Ben bu yolları sizin için
-        oluşturabilirim.
+        Uzun süreden beridir yazılım üzerinde çalışıyorum.
+        <b>Javascript, Html5, Css3</b> yazılım dillerine hakimim. Çeşitli
+        kütüphaneler kullanarak sizler için mobil ve masaüstü uygulamalar
+        geliştirebilir veya size ait kişisel web sitenizi oluşturabilirim.
       </p>
       <div className='mt-5'>
-        <button className='btn btn-dark me-3 btn-lg'>Hire me</button>
-        <button className='btn btn-outline-dark btn-lg'>Portfolio</button>
+        <Link href='/blogs'>
+          <a title='Yazılar' className='btn btn-dark me-3 btn-lg'>
+            Yazılar
+          </a>
+        </Link>
+        <Link href='/portfolio'>
+          <a title='Portfolyo' className='btn btn-outline-dark btn-lg'>
+            Portfolio
+          </a>
+        </Link>
       </div>
     </>
   );

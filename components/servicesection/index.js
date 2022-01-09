@@ -4,8 +4,8 @@ export default function index() {
   return (
     <div className='container' style={{ paddingBottom: 90, paddingTop: 90 }}>
       <div className='text-center pb-4'>
-        <h1 className='text-secondary'>Hizmetler</h1>
-        <h2>Sizin İçin Neler Yapabilirim?</h2>
+        <h2 className='text-secondary'>Hizmetler</h2>
+        <h3>Sizin İçin Neler Yapabilirim?</h3>
       </div>
       <div className='row'>
         <div className='col-lg-4 my-4'>

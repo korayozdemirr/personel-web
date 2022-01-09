@@ -2,7 +2,7 @@ import Link from 'next/link';
 export default function RightSide() {
   return (
     <div className='col-lg-8 mt-3 mt-lg-0'>
-      <h1 className='fs-3'>Koray Özdemir Kimdir?</h1>
+      <h3 className='fs-3'>Koray Özdemir Kimdir?</h3>
       <p>
         Kırklareli Üniversitesi Bilgisayar Programcılığı mezunuyum. Aynı zamanda
         Anadolu Üniversitesi Yönetim ve Bileşim Sistemleri bölmünüde bitirdim.
@@ -11,7 +11,7 @@ export default function RightSide() {
         Google ve diğer eğitim platformlarından eğitimler alıp kendimi
         geliştirmekteyim.
       </p>
-      <h2 className='fs-4'>İlgi Alanlarım Neler?</h2>
+      <h3 className='fs-4'>İlgi Alanlarım Neler?</h3>
       <p>
         Kodlama konusunda her zaman yeni teknolojileri takip ediyorum. Front-end
         ve Back-end sistemleri üzerinde kendimi geliştiriyorum. Bu teknolojiler

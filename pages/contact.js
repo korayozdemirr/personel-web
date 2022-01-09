@@ -16,7 +16,7 @@ export default function about() {
                   <span className='bi bi-telephone-fill'></span>
                 </div>
                 <div>
-                  <h6 className='fs-4'>Bizi Arayın</h6>
+                  <h3 className='fs-4'>Bizi Arayın</h3>
                   <p>
                     <a href='tel:+905061717645'>+90-506-171-76-45</a>
                   </p>
@@ -27,7 +27,7 @@ export default function about() {
                   <span className='bi bi-envelope'></span>
                 </div>
                 <div>
-                  <h6 className='fs-4'>Mail Gönderin</h6>
+                  <h3 className='fs-4'>Mail Gönderin</h3>
                   <p>
                     <a href='mailto:korayozdemirdev@gmail.com'>
                       korayozdemirdev@gmail.com
@@ -40,7 +40,7 @@ export default function about() {
                   <span className='bi  bi-cursor-fill'></span>
                 </div>
                 <div className='me-2'>
-                  <h6>Adres</h6>
+                  <h3>Adres</h3>
                   <p>
                     KARAKAŞ MAH. ESKİ KAVAKLI YOLU CAD. BASARAN SITESI F1 BLOK
                     NO: 32F İÇ KAPI NO: 12 MERKEZ / KIRKLARELİ

@@ -5,7 +5,19 @@ import Footer from '../components/footer';
 import Script from 'next/script';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../styles/global.css';
+import { useRouter } from 'next/router';
+
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  let title = 'Koray Özdemir';
+  if (router.pathname == '/about') {
+    title = 'Hakkımda - Koray Özdemir';
+  } else if (router.pathname == '/contact') {
+    title = 'İletişim - Koray Özdemir';
+  } else if (router.pathname == '/services') {
+    title = 'Servisler - Koray Özdemir';
+  }
+
   const seo = {
     url: 'https://korayozdemir.vercel.app/',
     name: 'Koray Özdemir',
@@ -17,7 +29,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel='canonical' href={seo.url} />
         <link rel='icon' href='./icon.png' type='image/png' sizes='24x24' />
-        <title>Koray Özdemir</title>
+        <title>{title}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content={seo.description} />
         <meta property='og:url' content={seo.url} />

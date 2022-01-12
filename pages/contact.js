@@ -3,7 +3,7 @@ import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import { db } from '../firebase/firebase';
 import { addDoc, collection } from 'firebase/firestore';
 export default function Contact() {
-  const [Message, setMessage] = useState('');
+  const [Message, setMessage] = useState(false);
   const sendMail = async (event) => {
     event.preventDefault();
     const docRef = await addDoc(collection(db, 'mails'), {
@@ -16,6 +16,7 @@ export default function Contact() {
     event.target.email.value = '';
     event.target.subject.value = '';
     event.target.message.value = '';
+    setMessage(true);
   };
   return (
     <>

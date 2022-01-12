@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import { db } from '../firebase/firebase';
 import { addDoc, collection } from 'firebase/firestore';
-export default function about() {
-  const [successMessage, setSuccessMessage] = useState('');
+export default function Contact() {
+  const [Message, setMessage] = useState('');
   const sendMail = async (event) => {
     event.preventDefault();
     const docRef = await addDoc(collection(db, 'mails'), {
@@ -16,7 +16,6 @@ export default function about() {
     event.target.email.value = '';
     event.target.subject.value = '';
     event.target.message.value = '';
-    setSuccessMessage('Mesaj Başarılı Bir Şekilde Gönderildi..');
   };
   return (
     <>
@@ -68,13 +67,14 @@ export default function about() {
             </div>
 
             <div className='col-lg-6'>
-              {successMessage ? (
+              {Message ? (
                 <div className='alert alert-success' role='alert'>
                   Mesaj Başarılı Bir Şekilde Gönderildi..
                 </div>
               ) : (
                 ''
               )}
+
               <form onSubmit={sendMail}>
                 <div className='row'>
                   <div className='col-lg-6 form-floating mb-3'>

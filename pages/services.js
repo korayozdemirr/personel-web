@@ -1,6 +1,6 @@
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import Image from 'next/image';
-export default function about() {
+export default function Services() {
   return (
     <>
       <section>

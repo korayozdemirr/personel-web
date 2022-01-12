@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SocialMedia from '../components/footer/SocialMedia';
 
-export default function about() {
+export default function About() {
   return (
     <>
       <section>

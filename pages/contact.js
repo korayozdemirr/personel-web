@@ -1,5 +1,23 @@
+import React, { useState } from 'react';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+import { db } from '../firebase/firebase';
+import { addDoc, collection } from 'firebase/firestore';
 export default function about() {
+  const [successMessage, setSuccessMessage] = useState('');
+  const sendMail = async (event) => {
+    event.preventDefault();
+    const docRef = await addDoc(collection(db, 'mails'), {
+      fullName: event.target.fullName.value,
+      email: event.target.email.value,
+      subject: event.target.subject.value,
+      message: event.target.message.value,
+    });
+    event.target.fullName.value = '';
+    event.target.email.value = '';
+    event.target.subject.value = '';
+    event.target.message.value = '';
+    setSuccessMessage('Mesaj Başarılı Bir Şekilde Gönderildi..');
+  };
   return (
     <>
       <section>
@@ -48,15 +66,25 @@ export default function about() {
                 </div>
               </div>
             </div>
+
             <div className='col-lg-6'>
-              <form>
+              {successMessage ? (
+                <div className='alert alert-success' role='alert'>
+                  Mesaj Başarılı Bir Şekilde Gönderildi..
+                </div>
+              ) : (
+                ''
+              )}
+              <form onSubmit={sendMail}>
                 <div className='row'>
                   <div className='col-lg-6 form-floating mb-3'>
                     <input
                       type='text'
                       placeholder='Adı Soyadı'
+                      name='fullName'
                       className='form-control'
                       id='floatingName'
+                      required
                     />
                     <label
                       htmlFor='floatingName'
@@ -68,9 +96,11 @@ export default function about() {
                   <div className='col-lg-6 form-floating mb-3'>
                     <input
                       type='email'
+                      name='email'
                       placeholder='Email'
                       className='form-control'
                       id='floatingEmail'
+                      required
                     />
                     <label
                       htmlFor='floatingEmail'
@@ -85,6 +115,8 @@ export default function about() {
                       placeholder='Konu'
                       className='form-control'
                       id='floatingSubject'
+                      name='subject'
+                      required
                     />
                     <label
                       htmlFor='floatingSubject'
@@ -98,7 +130,9 @@ export default function about() {
                       className='form-control'
                       placeholder='Leave a comment here'
                       id='floatingTextarea'
+                      name='message'
                       style={{ height: 150 }}
+                      required
                     ></textarea>
                     <label
                       htmlFor='floatingTextarea'
@@ -109,6 +143,7 @@ export default function about() {
                   </div>
                   <div className='col-lg-12'>
                     <button
+                      type='submit'
                       className='btn btn-dark btn-lg'
                       style={{ float: 'right', width: 200 }}
                     >

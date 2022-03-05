@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   const seo = {
-    url: 'https://korayozdemir.vercel.app/',
+    url: 'https://www.korayozdemir.com/',
     name: 'Koray Özdemir',
     description:
       'Merhaba ben Koray Özdemir. Uzun süreden beridir yazılım üzerinde çalışıyorum. Javascript, Html5, Css3 yazılım dillerine hakimim. Çeşitli kütüphaneler kullanarak sizler için mobil ve masaüstü uygulamalar geliştirebilir veya size ait kişisel web sitenizi oluşturabilirim.',
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     <HttpsRedirect>
       <Head>
         <link rel='canonical' href={seo.url} />
-        <link rel='icon' href='./icon.png' type='image/png' sizes='24x24' />
+        <link rel='icon' href='../icon.png' type='image/png' sizes='24x24' />
         <title>{title}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content={seo.description} />

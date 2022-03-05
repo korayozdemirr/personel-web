@@ -1,89 +1,60 @@
-import Image from 'next/image';
-import Link from 'next/link';
-export default function Blogs() {
+import Post from '../components/Posts';
+export default function Blogs({ posts }) {
   return (
     <>
       <section>
-        <div className='container py-d9'>
+        <div className='d-flex flex-column container py-d9 justify-content-center align-items-center '>
           <h2 className='text-secondary text-center'>Blog Yazılarım</h2>
+          <form
+            className='d-flex'
+            style={{
+              maxWidth: 600,
+            }}
+          >
+            <input
+              className='form-control me-2'
+              type='search'
+              placeholder='Ara'
+              aria-label='Search'
+            />
+            <button className='btn btn-outline-success' type='Button'>
+              Ara
+            </button>
+          </form>
         </div>
       </section>
       <section className='bg-light'>
         <div className='container py-d9'>
           <div className='row'>
-            <div className='col-lg-8'>
-              <div className='card'>
-                <Image
-                  src='https://i.ytimg.com/vi/lEHZbO3B374/hqdefault.jpg'
-                  width={500}
-                  height={500}
-                  className='card-img-top'
+            {posts.map((post, index) => (
+              <div className='col-lg-4' key={index}>
+                <Post
+                  index={index}
+                  image={post.imageSrc}
+                  date={post.date}
+                  editor={post.editor}
+                  slug={post.slug}
+                  title={post.title}
                 />
-                <div className='card-body'>
-                  <p className='card-text text-secondary'>
-                    12 Ocak 2021-<b>Koray ÖZDEMİR</b>
-                  </p>
-                  <h3 className='card-title'>Hello World</h3>
-                  <p>
-                    <a title='readmore' className='btn btn-dark'>
-                      Devamını Oku..
-                    </a>
-                  </p>
-                </div>
               </div>
-            </div>
-            <div className='col-lg-4'>
-              <div className='d-flex justify-content-start'>
-                <input
-                  type='text'
-                  className='form-control me-2'
-                  id='searchInput'
-                  placeholder='Aranacak kelimeyi giriniz'
-                />
+            ))}
 
-                <button className='btn btn-dark btn-lg'>Ara</button>
-              </div>
-              <div className='mt-5'>
-                <h3>Son Gönderilenler</h3>
-                <Link href='#'>
-                  <a className='link link-dark fs-4'>Hello World</a>
-                </Link>
-              </div>
-            </div>
+            {/* <div className='col-lg-4'>
+              
+            </div> */}
           </div>
-          <div className='d-flex align-items-center justify-content-center mt-5'>
-            <nav aria-label='Page navigation example'>
-              <ul className='pagination'>
-                <li className='page-item'>
-                  <a className='page-link' href='#' aria-label='Previous'>
-                    <span aria-hidden='true'>«</span>
-                  </a>
-                </li>
-                <li className='page-item active'>
-                  <a className='page-link' href='#'>
-                    1
-                  </a>
-                </li>
-                <li className='page-item'>
-                  <a className='page-link' href='#'>
-                    2
-                  </a>
-                </li>
-                <li className='page-item'>
-                  <a className='page-link' href='#'>
-                    3
-                  </a>
-                </li>
-                <li className='page-item'>
-                  <a className='page-link' href='#' aria-label='Next'>
-                    <span aria-hidden='true'>»</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+          <div className='d-flex align-items-center justify-content-center'>
+            <a href='#' className='link-primary'>
+              Daha fazla göster
+            </a>
           </div>
         </div>
       </section>
     </>
   );
 }
+Blogs.getInitialProps = async ({ req }) => {
+  const res = await fetch('http://localhost:3000/api/posts');
+  const json = await res.json();
+  return { posts: json };
+};

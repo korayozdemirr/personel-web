@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 export default function RightSide() {
   const router = useRouter();
+
   return (
     <div
       className='offcanvas offcanvas-start bg-light'
@@ -33,6 +34,21 @@ export default function RightSide() {
                 title='Anasayfa'
               >
                 Ana Sayfa
+              </a>
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link href='/blogs'>
+              <a
+                className={
+                  router.pathname === '/blogs'
+                    ? 'nav-link active'
+                    : '' + 'nav-link'
+                }
+                aria-current='page'
+                title='Blogs'
+              >
+                Blog
               </a>
             </Link>
           </li>

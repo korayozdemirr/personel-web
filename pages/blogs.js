@@ -55,7 +55,7 @@ export default function Blogs({ posts }) {
   );
 }
 Blogs.getInitialProps = async ({ req }) => {
-  const res = await fetch(`https://www.korayozdemir.com/api/posts`);
+  const res = await fetch(`http://localhost:3000/api/posts`);
   const json = await res.json();
   return { posts: json };
 };

@@ -7,5 +7,5 @@ export default async (req, res) => {
   querySnapshot.forEach((doc) => {
     posts.push(doc.data());
   });
-  res.json(posts);
+  res.status(200).json(posts);
 };

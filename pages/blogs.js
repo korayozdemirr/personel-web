@@ -1,5 +1,6 @@
 import Post from '../components/Posts';
-import Router from 'next/router';
+import { db } from '../firebase/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 export default function Blogs({ posts }) {
   return (
     <>
@@ -55,7 +56,11 @@ export default function Blogs({ posts }) {
   );
 }
 Blogs.getInitialProps = async ({ req }) => {
-  const res = await fetch(`http://localhost:3000/api/posts`);
-  const json = await res.json();
-  return { posts: json };
+  const posts = [];
+  const querySnapshot = await getDocs(collection(db, 'blogs'));
+  querySnapshot.forEach((doc) => {
+    posts.push(doc.data());
+  });
+
+  return { posts: posts };
 };

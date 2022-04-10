@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import BlogsLeft from '../../components/BlogsLeft';
-
+import { db } from '../../firebase/firebase';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 const PostDetails = ({ data }) => {
-  console.log(data);
   return (
     <>
       <section>
@@ -37,10 +37,17 @@ const PostDetails = ({ data }) => {
 
 export default PostDetails;
 export async function getServerSideProps(context) {
-  const res = await fetch(
-    `http://localhost:3000/api/post/${context.params.PostDetails}`
+  const posts = [];
+  const q = query(
+    collection(db, 'blogs'),
+    where('slug', '==', context.params.PostDetails)
   );
-  const data = await res.json();
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    posts.push(doc.data());
+  });
+
+  const data = posts;
   if (data.length === 0) {
     return {
       notFound: true,

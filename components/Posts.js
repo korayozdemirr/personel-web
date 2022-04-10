@@ -4,7 +4,7 @@ const Post = ({ ...props }) => {
   return (
     <div className='card mb-4' key={props.index}>
       <Image
-        src={props.image}
+        src={'https://res.cloudinary.com/demo/image/fetch/' + props.image}
         width={500}
         height={500}
         className='card-img-top'

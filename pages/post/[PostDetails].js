@@ -14,10 +14,11 @@ const PostDetails = ({ data }) => {
         <div className='row'>
           <div className='col-lg-8'>
             <div className='card' style={{ borderWidth: 0 }}>
-              <Image
+              <img
                 src={data[0].imageSrc}
                 width={500}
                 height={500}
+                loading='lazy'
                 className='card-img-top rounded'
               />
               <div className='card-body'>

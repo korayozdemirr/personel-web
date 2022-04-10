@@ -3,10 +3,11 @@ import Link from 'next/link';
 const Post = ({ ...props }) => {
   return (
     <div className='card mb-4' key={props.index}>
-      <Image
-        src={'https://res.cloudinary.com/demo/image/fetch/' + props.image}
-        width={500}
-        height={500}
+      <img
+        src={props.image}
+        width={300}
+        height={300}
+        loading='lazy'
         className='card-img-top'
       />
       <div className='card-body'>

@@ -1,6 +1,6 @@
 import Post from '../components/Posts';
 import { db } from '../firebase/firebase';
-import { collection, getDocs } from 'firebase/firestore';
+
 export default function Blogs({ posts }) {
   return (
     <>
@@ -57,10 +57,13 @@ export default function Blogs({ posts }) {
 }
 Blogs.getInitialProps = async ({ req }) => {
   const posts = [];
-  const querySnapshot = await getDocs(collection(db, 'blogs'));
-  querySnapshot.forEach((doc) => {
-    posts.push(doc.data());
-  });
-
+  await db
+    .collection('blogs')
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        posts.push(doc.data());
+      });
+    });
   return { posts: posts };
 };

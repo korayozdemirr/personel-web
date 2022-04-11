@@ -42,7 +42,6 @@ const PostDetails = ({ post }) => {
 
 export default PostDetails;
 export async function getServerSideProps(context) {
-  console.log(context.query.PostDetails);
   const post = [];
   const slug = context.query.PostDetails;
   try {
@@ -52,7 +51,7 @@ export async function getServerSideProps(context) {
       post.push(doc.data());
     });
   } catch (e) {
-    console.log(e);
+    console.log('hata');
   }
   const data = post;
   if (data.length === 0) {

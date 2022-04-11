@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import BlogsLeft from '../../components/BlogsLeft';
 import { db } from '../../firebase/firebase';
-import { collection, query, where, getDocs, doc } from 'firebase/firestore';
-import { useRouter } from 'next/router';
 import ReactHtmlParser from 'react-html-parser';
 const PostDetails = ({ post }) => {
   return (
@@ -45,11 +43,15 @@ export async function getServerSideProps(context) {
   const post = [];
   const slug = context.query.PostDetails;
   try {
-    const q = query(collection(db, 'blogs'), where('slug', '==', slug));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      post.push(doc.data());
-    });
+    await db
+      .collection('blogs')
+      .where('slug', '==', slug)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          post.push(doc.data());
+        });
+      });
   } catch (e) {
     console.log('hata');
   }

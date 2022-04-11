@@ -59,6 +59,7 @@ Blogs.getInitialProps = async ({ req }) => {
   const posts = [];
   await db
     .collection('blogs')
+    .orderBy('timestamp', 'desc')
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {

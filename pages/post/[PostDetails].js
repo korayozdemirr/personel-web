@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import BlogsLeft from '../../components/BlogsLeft';
 import { db } from '../../firebase/firebase';
 import ReactHtmlParser from 'react-html-parser';
@@ -16,8 +15,8 @@ const PostDetails = ({ post }) => {
             <div className='card' style={{ borderWidth: 0 }}>
               <img
                 src={post[0].imageSrc}
-                width={500}
-                height={500}
+                width={300}
+                height={300}
                 loading='lazy'
                 className='card-img-top rounded'
               />

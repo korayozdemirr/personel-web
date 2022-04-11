@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import { db } from '../firebase/firebase';
-import { addDoc, collection } from 'firebase/firestore';
 export default function Contact() {
   const [Message, setMessage] = useState(false);
   const sendMail = async (event) => {
     event.preventDefault();
-    const docRef = await addDoc(collection(db, 'mails'), {
+    const docRef = await db.collection('mails').add({
       fullName: event.target.fullName.value,
       email: event.target.email.value,
       subject: event.target.subject.value,

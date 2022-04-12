@@ -1,8 +1,8 @@
+import React, { useState } from 'react';
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import Router from 'next/router';
-import { useState } from 'react';
 TopBarProgress.config({
   barColors: {
     0: '#212529',
@@ -11,8 +11,8 @@ TopBarProgress.config({
   shadowBlur: 5,
   barThickness: 2,
 });
-export default function index() {
-  const [progress, setProgress] = useState(false);
+export default function Index() {
+  const [Progress, setProgress] = useState(false);
   Router.events.on('routeChangeStart', () => {
     setProgress(true);
   });
@@ -28,7 +28,7 @@ export default function index() {
           height: '90px',
         }}
       >
-        {progress && <TopBarProgress />}
+        {Progress && <TopBarProgress />}
         <div className='container'>
           <LeftSide />
           <RightSide />

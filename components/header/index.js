@@ -1,7 +1,24 @@
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
-
+import TopBarProgress from 'react-topbar-progress-indicator';
+import Router from 'next/router';
+import { useState } from 'react';
+TopBarProgress.config({
+  barColors: {
+    0: '#212529',
+    '1.0': '#212529',
+  },
+  shadowBlur: 5,
+  barThickness: 2,
+});
 export default function index() {
+  const [progress, setProgress] = useState(false);
+  Router.events.on('routeChangeStart', () => {
+    setProgress(true);
+  });
+  Router.events.on('routeChangeComplete', () => {
+    setProgress(false);
+  });
   return (
     <header className='d-flex position-relative' style={{ height: '90px' }}>
       <nav
@@ -11,6 +28,7 @@ export default function index() {
           height: '90px',
         }}
       >
+        {progress && <TopBarProgress />}
         <div className='container'>
           <LeftSide />
           <RightSide />

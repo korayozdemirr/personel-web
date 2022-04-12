@@ -1,8 +1,28 @@
+import { useState, useEffect } from 'react';
 import BlogsLeft from '../../components/BlogsLeft';
 import Link from 'next/link';
 import { db } from '../../firebase/firebase';
 import ReactHtmlParser from 'react-html-parser';
 const PostDetails = ({ post }) => {
+  const [postTitle, setPostTitle] = useState([]);
+  const pushPost = [];
+  useEffect(() => {
+    const recentPost = async () => {
+      await db
+        .collection('blogs')
+        .limit(5)
+        .orderBy('timestamp', 'desc')
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            pushPost.push(doc.data());
+          });
+        });
+      setPostTitle(pushPost);
+      console.log(postTitle);
+    };
+    recentPost();
+  }, []);
   return (
     <>
       <section>
@@ -33,12 +53,11 @@ const PostDetails = ({ post }) => {
             <BlogsLeft />
             <p className='fw-normal fs-2 my-4 text-center'>Yeni Postlar</p>
             <div className='d-flex flex-column  mt-4'>
-              <Link href='/'>
-                <a className='link-dark fs-2 mt-2'>Hello World</a>
-              </Link>
-              <Link href='/'>
-                <a className='link-dark fs-2 mt-2'>Hello World</a>
-              </Link>
+              {postTitle.map((item, index) => (
+                <Link key={index} href={'/post/' + item.slug}>
+                  <a className='link-dark fs-2 mt-2'>{item.title}</a>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

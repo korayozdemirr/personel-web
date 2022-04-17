@@ -1,28 +1,15 @@
+import { useState } from 'react';
 import Post from '../components/Posts';
+import Search from '../components/search';
 import { db } from '../firebase/firebase';
-
-export default function Blogs({ posts }) {
+export default function Blogs({ posts, search }) {
   return (
     <>
       <section>
         <div className='d-flex flex-column container py-d9 justify-content-center align-items-center '>
           <h2 className='text-secondary text-center'>Blog Yazılarım</h2>
-          <form
-            className='d-flex'
-            style={{
-              maxWidth: 600,
-            }}
-          >
-            <input
-              className='form-control me-2'
-              type='search'
-              placeholder='Ara'
-              aria-label='Search'
-            />
-            <button className='btn btn-outline-success' type='Button'>
-              Ara
-            </button>
-          </form>
+
+          <Search items={search} />
         </div>
       </section>
       <section className='bg-light'>
@@ -57,8 +44,10 @@ export default function Blogs({ posts }) {
 }
 Blogs.getInitialProps = async ({ req }) => {
   const posts = [];
+  const search = [];
   await db
     .collection('blogs')
+    .limit(6)
     .orderBy('timestamp', 'desc')
     .get()
     .then((querySnapshot) => {
@@ -66,5 +55,13 @@ Blogs.getInitialProps = async ({ req }) => {
         posts.push(doc.data());
       });
     });
-  return { posts: posts };
+  await db
+    .collection('blogs')
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        search.push(doc.data());
+      });
+    });
+  return { posts, search };
 };

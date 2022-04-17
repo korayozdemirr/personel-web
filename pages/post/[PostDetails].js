@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import BlogsLeft from '../../components/BlogsLeft';
+import Search from '../../components/search';
 import Link from 'next/link';
 import { db } from '../../firebase/firebase';
 import ReactHtmlParser from 'react-html-parser';
-const PostDetails = ({ post }) => {
+const PostDetails = ({ post, search }) => {
   const [postTitle, setPostTitle] = useState([]);
   const pushPost = [];
   useEffect(() => {
@@ -50,7 +50,7 @@ const PostDetails = ({ post }) => {
             </div>
           </div>
           <div className='col-lg-4'>
-            <BlogsLeft />
+            <Search items={search} />
             <p className='fw-normal fs-2 my-4 text-center'>Yeni Postlar</p>
             <div className='d-flex flex-column  mt-4'>
               {postTitle.map((item, index) => (
@@ -69,6 +69,7 @@ const PostDetails = ({ post }) => {
 export default PostDetails;
 export async function getServerSideProps(context) {
   const post = [];
+  const search = [];
   const slug = context.query.PostDetails;
   try {
     await db
@@ -78,6 +79,14 @@ export async function getServerSideProps(context) {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           post.push(doc.data());
+        });
+      });
+    await db
+      .collection('blogs')
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          search.push(doc.data());
         });
       });
   } catch (e) {
@@ -92,6 +101,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       post,
+      search,
     }, // will be passed to the page component as props
   };
 }

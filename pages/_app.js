@@ -6,7 +6,6 @@ import Script from 'next/script';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../styles/global.css';
 import { useRouter } from 'next/router';
-
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   let title = 'Koray Özdemir';
@@ -24,6 +23,7 @@ function MyApp({ Component, pageProps }) {
     description:
       'Merhaba ben Koray Özdemir. Uzun süreden beridir yazılım üzerinde çalışıyorum. Javascript, Html5, Css3 yazılım dillerine hakimim. Çeşitli kütüphaneler kullanarak sizler için mobil ve masaüstü uygulamalar geliştirebilir veya size ait kişisel web sitenizi oluşturabilirim.',
   };
+
   return (
     <HttpsRedirect>
       <Head>

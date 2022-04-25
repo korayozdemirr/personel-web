@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/analytics';
 const firebaseConfig = {
   apiKey: 'AIzaSyB2bq63Y7F6NJmFC-2zk7nLiwHpCP2XhXo',
   authDomain: 'web-personel-db44e.firebaseapp.com',
@@ -14,4 +15,6 @@ if (!firebase.apps.length) {
 }
 
 export const db = firebase.firestore();
+export const analytics = firebase.analytics();
+
 // Initialize Firebase

@@ -45,16 +45,16 @@ function MyApp({ Component, pageProps }) {
         <meta name='robots' content='follow, index' />
       </Head>
       <Script
-        src='https://www.googletagmanager.com/gtag/js?id=G-X6QMWV6J2V'
+        src="https://www.googletagmanager.com/gtag/js?id=G-WNCVBCY16X"
         strategy='afterInteractive'
       />
       <Script id='google-analytics' strategy='afterInteractive'>
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
+          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-X6QMWV6J2V');
+           gtag('config', 'G-WNCVBCY16X');
         `}
       </Script>
       <Header />

@@ -1,30 +1,27 @@
 import Link from 'next/link';
-
+import { useSelector } from 'react-redux';
 export default function LeftSide() {
+  const theme = useSelector((state)=>state.theme.value)
   return (
     <>
-      <b className='fs-4' style={{ color: '#adb5bd' }}>
-        Merhaba
+      <b className='fs-3' style={{ color: '#adb5bd' }}>
+        Hello World
       </b>
-      <h2 className='fs-4'>
-        Ben <b className='fs-4'>Koray Özdemir.</b> Ben bir{' '}
-        <b className='fs-4'>Yazılım</b> geliştiricisiyim.
+      <h2 className='fs-3'>
+        I am <b className='fs-2'>Koray Ozdemir.</b>
       </h2>
-      <p className='fs-6'>
-        Uzun süreden beridir yazılım üzerinde çalışıyorum.
-        <b>Javascript, Html5, Css3</b> yazılım dillerine hakimim. Çeşitli
-        kütüphaneler kullanarak sizler için mobil ve masaüstü uygulamalar
-        geliştirebilir veya size ait kişisel web sitenizi oluşturabilirim.
+      <p className='fs-3'>
+      I'm a <b>MERN</b> stack developer from Turkey. I create custom websites to help businesses do better online.
       </p>
       <div className='mt-5'>
-        <Link href='/blogs'>
-          <a title='Yazılar' className='btn btn-dark me-3 btn-lg'>
-            Yazılar
+        <Link href='/about'>
+          <a title='About Me' className={'btn me-3 btn-lg btn-'+theme[1]}>
+            About Me
           </a>
         </Link>
-        <Link href='/portfolio'>
-          <a title='Portfolyo' className='btn btn-outline-dark btn-lg'>
-            Portfolio
+        <Link href='/projects'>
+          <a title='My Projects' className={'btn btn-lg btn-outline-'+theme[1]}>
+          My Projects
           </a>
         </Link>
       </div>

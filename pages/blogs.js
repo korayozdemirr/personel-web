@@ -5,14 +5,14 @@ import { db } from '../firebase/firebase';
 export default function Blogs({ posts, search }) {
   return (
     <>
-      <section>
+      <section className='bg-dark'>
         <div className='d-flex flex-column container py-d9 justify-content-center align-items-center '>
           <h2 className='text-secondary text-center'>Blog Yazılarım</h2>
 
           <Search items={search} />
         </div>
       </section>
-      <section className='bg-light'>
+      <section className='bg-dark'>
         <div className='container py-d9'>
           <div className='row'>
             {posts.map((post, index) => (

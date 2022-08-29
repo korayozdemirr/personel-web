@@ -1,33 +1,17 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { useSelector } from "react-redux";
 export default function RightSide() {
+  const theme = useSelector((state) => state.theme.value);
   return (
-    <div className='mt-3 mt-lg-0'>
-      <h3 className='fs-3'>Koray Özdemir Kimdir?</h3>
-      <p>
-        Kırklareli Üniversitesi Bilgisayar Programcılığı mezunuyum. Aynı zamanda
-        Anadolu Üniversitesi Yönetim ve Bileşim Sistemleri bölmünüde bitirdim.
-        Kendimi web teknolojileri ve mobil uygulamalar üzerinde geliştiriyorum.
-        Son zamanlarda <b>Dijital Pazarlama</b> sektörünü merak etmekteyim.
-        Google ve diğer eğitim platformlarından eğitimler alıp kendimi
-        geliştirmekteyim.
+    <div className="mt-3 mt-lg-0">
+      <h3 className="fs-3">Who Am I?</h3>
+      <p className="fs-3">
+        I’ve always been passionate about coding, and I’m eager to apply my
+        programming skills to new pursuits. I love to interact with my team
+        setting sharing my skills and knowledge. Having been studied on several
+        programming languages, I can easily learn a new programming language and
+        develop innovative applications.
       </p>
-      <h3 className='fs-4'>İlgi Alanlarım Neler?</h3>
-      <p>
-        Kodlama konusunda her zaman yeni teknolojileri takip ediyorum. Front-end
-        ve Back-end sistemleri üzerinde kendimi geliştiriyorum. Bu teknolojiler
-        sayesinde hem web sitesi hemde mobil uygulama geliştiriyorum.
-      </p>
-      <hr />
-      <div className='d-flex justify-content-end'>
-        <Link href='/about'>
-          <a
-            className='btn btn-dark mt-2'
-            title='Koray Özdemir hakkında detaylı bilgi için tıkla'
-          >
-            Devemını Gör
-          </a>
-        </Link>
-      </div>
     </div>
   );
 }

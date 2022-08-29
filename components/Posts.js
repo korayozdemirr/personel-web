@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 const Post = ({ ...props }) => {
   return (
-    <div className='card mb-4' key={props.index}>
+    <div className='card mb-4 bg-dark text-white' key={props.index}>
       <img
         src={props.image}
         width={300}

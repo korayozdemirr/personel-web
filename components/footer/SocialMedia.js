@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
-export default function SocialMedia() {
+export default function SocialMedia({...props}) {
+  const theme = useSelector(state=>state.theme.value)
   return (
     <>
       <Link href='https://www.facebook.com/korayozdmir'>
@@ -60,7 +62,7 @@ export default function SocialMedia() {
         </a>
       </Link>
       <Link href='https://github.com/korayozdemirr'>
-        <a rel='nofollow' className='btn btn-outline-dark'>
+        <a rel='nofollow' className={'btn btn-outline-'+theme[1]}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='16'

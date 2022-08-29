@@ -2,7 +2,6 @@ import HomeSection from '../components/homesection';
 import AboutSection from '../components/aboutsection';
 import ServiceSection from '../components/servicesection';
 import { useEffect } from 'react';
-import { analytics } from '../firebase/firebase';
 import { useSelector } from 'react-redux';
 export default function Home() {
   const theme = useSelector((state)=>state.theme.value)

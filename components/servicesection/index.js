@@ -2,7 +2,7 @@ import Link from "next/link";
 import Project from "../project";
 import { db } from "../../firebase/firebase";
 import { useEffect, useState } from "react";
-const index = () => {
+const Index = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     async function project() {
@@ -51,4 +51,4 @@ const index = () => {
     </div>
   );
 };
-export default index;
+export default Index;

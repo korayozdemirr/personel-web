@@ -11,7 +11,7 @@ export default function LeftSide() {
         I am <b className='fs-2'>Koray Ozdemir.</b>
       </h2>
       <p className='fs-3'>
-      I'm a <b>MERN</b> stack developer from Turkey. I create custom websites to help businesses do better online.
+      I am a <b>MERN</b> stack developer from Turkey. I create custom websites to help businesses do better online.
       </p>
       <div className='mt-5'>
         <Link href='/about'>

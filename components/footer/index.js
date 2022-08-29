@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import SocialMedia from './SocialMedia';
-export default function index() {
+export default function Index() {
   const theme = useSelector(state=>state.theme.value)
   return (
     <>

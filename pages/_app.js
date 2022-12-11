@@ -46,6 +46,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="Author" content="Koray Özdemir" />
         <meta name="publisher" content="Vercel Inc." />
         <meta name="robots" content="follow, index" />
+        <meta name="theme-color" content="#212529" />
+        <meta name="msapplication-navbutton-color" content="#212529" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#212529" />
       </Head>
       <Script

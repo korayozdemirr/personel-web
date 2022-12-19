@@ -1,42 +1,20 @@
 import Link from "next/link";
 import Project from "../project";
-import { db } from "../../firebase/firebase";
-import { useEffect, useState } from "react";
-const Index = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    async function project() {
-      try {
-        await db
-          .collection("projects")
-          .limit(3)
-          .get()
-          .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              setData((state) => [doc.data(), ...state]);
-            });
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    project();
-  }, []);
+const Index = ({...props}) => {
   return (
     <div className="container" style={{ paddingBottom: 90, paddingTop: 90 }}>
       <div className="text-center pb-4">
         <h2 className="text-secondary">My Projects</h2>
-
       </div>
       <div className="row">
-        {data.map((item, index) => (
+        {props?.data?.data.slice(0,3).map((item) => (
           <Project
-            imageUrl={item.imageUrl}
-            demoUrl={item.demoUrl}
-            gitUrl={item.gitUrl}
-            title={item.title}
-            description={item.description}
-            key={index}
+            imageUrl={item.attributes.imageUri}
+            demoUrl={item.attributes.liveDemo}
+            gitUrl={item.attributes.githubRepo}
+            title={item.attributes.title}
+            description={item.attributes.label}
+            key={item.id}
           />
         ))}
       </div>

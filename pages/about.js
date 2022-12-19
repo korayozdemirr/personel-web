@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import SocialMedia from "../components/footer/SocialMedia";
 
 export default function About() {
   const theme = useSelector((state) => state.theme.value);

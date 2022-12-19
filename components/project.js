@@ -8,7 +8,7 @@ const Project = ({...props}) => {
       <div className={"card bg-" + theme[0]}>
         <Image
           src={props.imageUrl}
-          height={200}
+          height={300}
           width={300}
           className="card-img-top p-2 rounded"
           alt="website"

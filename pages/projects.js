@@ -1,10 +1,9 @@
 import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 import { useSelector } from "react-redux";
-import { db } from "../firebase/firebase";
 import Project from "../components/project";
-export default function Services({data}) {
+export default function Services({json}) {
+  console.log(json)
   const theme = useSelector((state) => state.theme.value);
-  console.log(data)
   return (
     <>
       <section className={"bg-" + theme[0]}>
@@ -15,14 +14,14 @@ export default function Services({data}) {
       <section className={"bg-" + theme[0]}>
         <div className="container py-d9">
           <div className="row">
-          {data.map((item, index) => (
-              <Project
-                imageUrl={item.imageUrl}
-                demoUrl={item.demoUrl}
-                gitUrl={item.gitUrl}
-                title={item.title}
-                description={item.description}
-                key={index}
+            {json?.data?.map((item)=>(
+              <Project  
+                key={item.id}
+                imageUrl={item.attributes.imageUri}
+                title={item.attributes.title}
+                description={item.attributes.labels}
+                demoUrl={item.attributes.liveDemo}
+                gitUrl={item.attributes.githubRepo}
               />
             ))}
           </div>
@@ -31,19 +30,18 @@ export default function Services({data}) {
     </>
   );
 }
-export async function getServerSideProps(context) {
-  const data = [];
-  await db
-  .collection("projects")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      data.push(doc.data())
-    });
-  });
-  return {
-    props: {
-      data
-    },
-  }
-}
+// export async function getServerSideProps() {
+//   Fetch data from external API
+//   const uri = "http://localhost:1337/api/projects";
+ 
+//   try {
+//     const data = await fetch(uri);
+//     const json = await data.json();
+//      return { props: { json } };
+//   } catch (error) {
+
+//   }
+
+//   Pass data to the page via props
+  
+// }

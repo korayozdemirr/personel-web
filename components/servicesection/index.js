@@ -7,13 +7,13 @@ const Index = ({...props}) => {
         <h2 className="text-secondary">My Projects</h2>
       </div>
       <div className="row">
-        {props?.data?.data.slice(0,3).map((item) => (
+        {props.data.map((item) => (
           <Project
-            imageUrl={item.attributes.imageUri}
-            demoUrl={item.attributes.liveDemo}
-            gitUrl={item.attributes.githubRepo}
-            title={item.attributes.title}
-            description={item.attributes.label}
+            imageUrl={item.imageUrl}
+            demoUrl={item.demoUrl}
+            gitUrl={item.gitUrl}
+            title={item.title}
+            description={item.description}
             key={item.id}
           />
         ))}

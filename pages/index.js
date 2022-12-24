@@ -2,7 +2,11 @@ import HomeSection from "../components/homesection";
 import AboutSection from "../components/aboutsection";
 import ServiceSection from "../components/servicesection";
 import { useSelector } from "react-redux";
-export default function Home({json}) {
+import { db } from "../firebase/firebaseConfig";
+import {collection, getDocs, limit, orderBy, query} from "firebase/firestore"
+import { cloneElement, useState } from "react";
+export default function Home({ json }) {
+  console.log(json)
   const theme = useSelector((state) => state.theme.value);
   return (
     <>
@@ -25,20 +29,26 @@ export default function Home({json}) {
         <ServiceSection data={json} />
       </section>
     </>
-  );//todo body background change
+  ); //todo body background change
 }
-// export async function getServerSideProps() {
-//   Fetch data from external API
-//   const uri = "http://localhost:1337/api/projects";
+export async function getServerSideProps() {
+  let json;
+  try {
+    const projects = collection(db, "projects");
+    const q = query(projects, limit(3))
+    const querySnapshot = await getDocs(q);
+     json = querySnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+      createAt: doc.data().createAt?.toDate().getTime(),
+    }));
+    console.log(json)
+    
+  } catch (error) {
+    console.log(error.message)
+  } 
  
-//   try {
-//     const data = await fetch(uri);
-//     const json = await data.json();
-//      return { props: { json } };
-//   } catch (error) {
-
-//   }
-
-//   Pass data to the page via props
-  
-// }
+  return { props: {
+    json
+  } };
+}

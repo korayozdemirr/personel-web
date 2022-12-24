@@ -25,7 +25,7 @@ export default function Home({json}) {
         <ServiceSection data={json} />
       </section>
     </>
-  );
+  );//todo body background change
 }
 // export async function getServerSideProps() {
 //   Fetch data from external API

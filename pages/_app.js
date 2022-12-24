@@ -50,10 +50,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="msapplication-navbutton-color" content={theme === "dark" ? "#212529" :  ""} />
         <meta name="apple-mobile-web-app-status-bar-style" content={theme === "dark" ? "#212529" :  ""} /> */}
       </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-WNCVBCY16X"
-        strategy="afterInteractive"
-      />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -63,6 +59,7 @@ function MyApp({ Component, pageProps }) {
            gtag('config', 'G-WNCVBCY16X');
         `}
       </Script>
+  
       <Header />
       <main>
         

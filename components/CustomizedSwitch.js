@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { themeSelect } from "../redux/themeSlice";
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -53,17 +53,35 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const CustomizeSwitch = () => {
   const theme = useSelector((state) => state.theme.value);
-  const [mode, setMode] = useState(theme[2]);
+  const [mode, setMode] = useState(false);
   const dispatch = useDispatch();
+  const ls = () =>{
+    if(theme[2]){
+      localStorage.setItem("darkmode", ["light", "dark",false])
+    }else{
+      localStorage.setItem("darkmode", ["dark", "light",true])
+    }
+  }
   const darkMode = () => {
     if (mode) {
       dispatch(themeSelect(["light", "dark", false]));
-      setMode(false);
     } else {
       dispatch(themeSelect(["dark", "light", true]));
-      setMode(true);
     }
   };
+  useEffect(() => {
+    const result = localStorage.getItem("darkmode");
+    if (result) {
+      if (result.split(",")[2] == "true") {
+        setMode(true)
+        dispatch(themeSelect(["dark", "light", true]));
+      } else {
+        setMode(false)
+        dispatch(themeSelect(["light", "dark", false]));
+      }
+    }
+    document.body.className = theme[2] ? "bg-dark" : "bg-light"
+  }, [mode]);
 
   return (
     <>
@@ -81,7 +99,11 @@ const CustomizeSwitch = () => {
       <MaterialUISwitch
         sx={{ m: 1 }}
         checked={mode}
-        onClick={() => darkMode()}
+        onClick={() => {
+          setMode(!mode)
+          darkMode()
+          ls()
+        }}
       />
     </>
   );

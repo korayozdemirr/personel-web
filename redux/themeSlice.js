@@ -10,7 +10,6 @@ export const themSlice = createSlice({
   reducers: {
     themeSelect: (state, action) => {
       state.value = action.payload;
-      window.localStorage.setItem("darkmode", state.value)
     }
   }
 });

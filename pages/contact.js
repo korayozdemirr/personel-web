@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
-import { db } from '../firebase/firebase';
+import { db } from '../firebase/firebaseConfig';
 import { useSelector } from 'react-redux';
+import { addDoc, collection } from 'firebase/firestore';
 export default function Contact() {
   const [Message, setMessage] = useState(false);
   const theme = useSelector(state=>state.theme.value)
   const sendMail = async (event) => {
     event.preventDefault();
-    const docRef = await db.collection('mails').add({
+    await addDoc(collection(db,"mails"),{
       fullName: event.target.fullName.value,
       email: event.target.email.value,
       subject: event.target.subject.value,
       message: event.target.message.value,
-    });
+    })
     event.target.fullName.value = '';
     event.target.email.value = '';
     event.target.subject.value = '';

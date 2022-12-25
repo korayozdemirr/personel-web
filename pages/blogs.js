@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Post from '../components/Posts';
 import Search from '../components/search';
-import { db } from '../firebase/firebase';
+import { db } from '../firebase/firebaseConfig';
 export default function Blogs({ posts, search }) {
   return (
     <>
-      <section className='bg-dark'>
+      <section className='bg-darka'>
         <div className='d-flex flex-column container py-d9 justify-content-center align-items-center '>
           <h2 className='text-secondary text-center'>Blog Yazılarım</h2>
 

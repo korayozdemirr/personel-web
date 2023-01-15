@@ -9,6 +9,6 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['res.cloudinary.com', 'localhost', 'www.sitesaga.com'],
+    domains: ['firebasestorage.googleapis.com'],
   },
 };
